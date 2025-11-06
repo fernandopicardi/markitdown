@@ -1,0 +1,490 @@
+# MarkItDown GUI - Default Configuration
+# This file contains all default settings for the application.
+# User-specific settings should be in config.yaml
+
+# Application Profile
+# Options: development, production, test
+profile: production
+
+# Conversion Settings
+conversion:
+  # Enable MarkItDown plugins
+  enable_plugins: false
+  
+  # Azure Document Intelligence
+  docintel_endpoint: null
+  docintel_key: null
+  
+  # LLM Integration for image descriptions
+  llm_enabled: false
+  llm_model: null  # e.g., "gpt-4o", "gpt-4", "claude-3-opus"
+  llm_api_key: null
+  llm_prompt: null  # Custom prompt for LLM
+  
+  # Output settings
+  default_output_dir: null  # null = same as input file
+  auto_save: true
+  preserve_formatting: true
+  
+  # Performance
+  max_concurrent_conversions: 1  # 1-10
+
+# UI Settings
+ui:
+  # Theme
+  theme: default  # default, dark, light, blue, green, custom
+  
+  # Internationalization
+  language: en  # en, pt, es, fr, de, ja, zh
+  
+  # Window settings
+  window_width: 800
+  window_height: 600
+  window_maximized: false
+  auto_save_geometry: true
+  
+  # UI elements
+  show_toolbar: true
+  show_statusbar: true
+  show_line_numbers: false
+  
+  # Font settings
+  font_family: "Segoe UI"
+  font_size: 10
+
+# Advanced Settings
+advanced:
+  # Logging
+  log_level: INFO  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  log_file: null  # null = console only
+  
+  # Debug
+  enable_debug_mode: false
+  
+  # Cache
+  cache_enabled: true
+  cache_size_mb: 100  # 0-1000
+  
+  # Updates
+  auto_update_check: true
+  
+  # Telemetry
+  telemetry_enabled: false
+  
+  # Experimental features
+  experimental_features: false
+
+# File Format Specific Configurations
+file_formats:
+  pdf:
+    format: pdf
+    enabled: true
+    options:
+      extract_images: true
+      extract_tables: true
+      ocr_enabled: false
+      page_range: null  # null = all pages
+    max_file_size_mb: 100
+    timeout_seconds: 300
+  
+  docx:
+    format: docx
+    enabled: true
+    options:
+      preserve_styles: true
+      extract_images: true
+      extract_tables: true
+    max_file_size_mb: 50
+    timeout_seconds: 120
+  
+  pptx:
+    format: pptx
+    enabled: true
+    options:
+      extract_slides: true
+      extract_notes: true
+      extract_images: true
+    max_file_size_mb: 50
+    timeout_seconds: 120
+  
+  xlsx:
+    format: xlsx
+    enabled: true
+    options:
+      extract_all_sheets: true
+      preserve_formatting: true
+      include_formulas: false
+    max_file_size_mb: 50
+    timeout_seconds: 120
+  
+  html:
+    format: html
+    enabled: true
+    options:
+      extract_links: true
+      extract_images: true
+      clean_html: true
+    max_file_size_mb: 10
+    timeout_seconds: 60
+  
+  csv:
+    format: csv
+    enabled: true
+    options:
+      delimiter: auto  # auto, comma, semicolon, tab
+      encoding: utf-8
+      skip_empty_rows: true
+    max_file_size_mb: 100
+    timeout_seconds: 60
+  
+  json:
+    format: json
+    enabled: true
+    options:
+      pretty_print: true
+      preserve_structure: true
+    max_file_size_mb: 50
+    timeout_seconds: 60
+  
+  xml:
+    format: xml
+    enabled: true
+    options:
+      preserve_namespaces: true
+      validate: false
+    max_file_size_mb: 50
+    timeout_seconds: 60
+  
+  image:
+    format: image
+    enabled: true
+    options:
+      ocr_enabled: true
+      extract_exif: true
+      resize_large: true
+      max_dimension: 4000
+    max_file_size_mb: 50
+    timeout_seconds: 180
+  
+  audio:
+    format: audio
+    enabled: true
+    options:
+      transcription_enabled: true
+      extract_metadata: true
+      language: auto
+    max_file_size_mb: 500
+    timeout_seconds: 600
+  
+  epub:
+    format: epub
+    enabled: true
+    options:
+      extract_chapters: true
+      extract_images: true
+    max_file_size_mb: 100
+    timeout_seconds: 180
+  
+  zip:
+    format: zip
+    enabled: true
+    options:
+      extract_all: true
+      max_extract_size_mb: 1000
+    max_file_size_mb: 500
+    timeout_seconds: 300
+
+# Theme Configurations
+themes:
+  default:
+    name: default
+    display_name: Default
+    colors:
+      background: "#FFFFFF"
+      foreground: "#000000"
+      primary: "#0078D4"
+      secondary: "#6C757D"
+      success: "#28A745"
+      warning: "#FFC107"
+      error: "#DC3545"
+      text: "#212529"
+      text_secondary: "#6C757D"
+    fonts:
+      default: "Segoe UI"
+      monospace: "Consolas"
+    styles:
+      border_radius: 4
+      padding: 8
+  
+  dark:
+    name: dark
+    display_name: Dark
+    colors:
+      background: "#1E1E1E"
+      foreground: "#FFFFFF"
+      primary: "#0078D4"
+      secondary: "#6C757D"
+      success: "#28A745"
+      warning: "#FFC107"
+      error: "#DC3545"
+      text: "#FFFFFF"
+      text_secondary: "#ADADAD"
+    fonts:
+      default: "Segoe UI"
+      monospace: "Consolas"
+    styles:
+      border_radius: 4
+      padding: 8
+  
+  light:
+    name: light
+    display_name: Light
+    colors:
+      background: "#FAFAFA"
+      foreground: "#000000"
+      primary: "#0078D4"
+      secondary: "#6C757D"
+      success: "#28A745"
+      warning: "#FFC107"
+      error: "#DC3545"
+      text: "#212529"
+      text_secondary: "#6C757D"
+    fonts:
+      default: "Segoe UI"
+      monospace: "Consolas"
+    styles:
+      border_radius: 4
+      padding: 8
+  
+  blue:
+    name: blue
+    display_name: Blue
+    colors:
+      background: "#F0F8FF"
+      foreground: "#000080"
+      primary: "#0066CC"
+      secondary: "#4A90E2"
+      success: "#28A745"
+      warning: "#FFC107"
+      error: "#DC3545"
+      text: "#000080"
+      text_secondary: "#4A90E2"
+    fonts:
+      default: "Segoe UI"
+      monospace: "Consolas"
+    styles:
+      border_radius: 4
+      padding: 8
+  
+  green:
+    name: green
+    display_name: Green
+    colors:
+      background: "#F0FFF0"
+      foreground: "#006400"
+      primary: "#228B22"
+      secondary: "#32CD32"
+      success: "#28A745"
+      warning: "#FFC107"
+      error: "#DC3545"
+      text: "#006400"
+      text_secondary: "#32CD32"
+    fonts:
+      default: "Segoe UI"
+      monospace: "Consolas"
+    styles:
+      border_radius: 4
+      padding: 8
+
+# Internationalization (i18n)
+# Translation strings for different languages
+i18n:
+  en:
+    ui:
+      app_title: "MarkItDown - File to Markdown Converter"
+      convert_button: "Convert"
+      cancel_button: "Cancel"
+      browse_button: "Browse..."
+      input_file_label: "Input File:"
+      output_file_label: "Output File:"
+      progress_label: "Progress"
+      result_label: "Result"
+      status_ready: "Ready"
+      status_converting: "Converting..."
+      status_completed: "Conversion completed successfully!"
+      status_failed: "Conversion failed"
+      status_cancelled: "Conversion cancelled"
+      error_no_file: "Please select an input file."
+      error_file_not_found: "The file does not exist"
+      error_conversion_failed: "The conversion failed"
+    settings:
+      title: "Settings"
+      conversion_tab: "Conversion"
+      ui_tab: "Interface"
+      advanced_tab: "Advanced"
+      save_button: "Save"
+      cancel_button: "Cancel"
+      apply_button: "Apply"
+  
+  pt:
+    ui:
+      app_title: "MarkItDown - Conversor de Arquivo para Markdown"
+      convert_button: "Converter"
+      cancel_button: "Cancelar"
+      browse_button: "Procurar..."
+      input_file_label: "Arquivo de Entrada:"
+      output_file_label: "Arquivo de Saída:"
+      progress_label: "Progresso"
+      result_label: "Resultado"
+      status_ready: "Pronto"
+      status_converting: "Convertendo..."
+      status_completed: "Conversão concluída com sucesso!"
+      status_failed: "Conversão falhou"
+      status_cancelled: "Conversão cancelada"
+      error_no_file: "Por favor, selecione um arquivo de entrada."
+      error_file_not_found: "O arquivo não existe"
+      error_conversion_failed: "A conversão falhou"
+    settings:
+      title: "Configurações"
+      conversion_tab: "Conversão"
+      ui_tab: "Interface"
+      advanced_tab: "Avançado"
+      save_button: "Salvar"
+      cancel_button: "Cancelar"
+      apply_button: "Aplicar"
+  
+  es:
+    ui:
+      app_title: "MarkItDown - Convertidor de Archivo a Markdown"
+      convert_button: "Convertir"
+      cancel_button: "Cancelar"
+      browse_button: "Buscar..."
+      input_file_label: "Archivo de Entrada:"
+      output_file_label: "Archivo de Salida:"
+      progress_label: "Progreso"
+      result_label: "Resultado"
+      status_ready: "Listo"
+      status_converting: "Convirtiendo..."
+      status_completed: "¡Conversión completada con éxito!"
+      status_failed: "La conversión falló"
+      status_cancelled: "Conversión cancelada"
+      error_no_file: "Por favor, seleccione un archivo de entrada."
+      error_file_not_found: "El archivo no existe"
+      error_conversion_failed: "La conversión falló"
+    settings:
+      title: "Configuración"
+      conversion_tab: "Conversión"
+      ui_tab: "Interfaz"
+      advanced_tab: "Avanzado"
+      save_button: "Guardar"
+      cancel_button: "Cancelar"
+      apply_button: "Aplicar"
+  
+  fr:
+    ui:
+      app_title: "MarkItDown - Convertisseur de Fichier en Markdown"
+      convert_button: "Convertir"
+      cancel_button: "Annuler"
+      browse_button: "Parcourir..."
+      input_file_label: "Fichier d'Entrée:"
+      output_file_label: "Fichier de Sortie:"
+      progress_label: "Progression"
+      result_label: "Résultat"
+      status_ready: "Prêt"
+      status_converting: "Conversion en cours..."
+      status_completed: "Conversion terminée avec succès!"
+      status_failed: "La conversion a échoué"
+      status_cancelled: "Conversion annulée"
+      error_no_file: "Veuillez sélectionner un fichier d'entrée."
+      error_file_not_found: "Le fichier n'existe pas"
+      error_conversion_failed: "La conversion a échoué"
+    settings:
+      title: "Paramètres"
+      conversion_tab: "Conversion"
+      ui_tab: "Interface"
+      advanced_tab: "Avancé"
+      save_button: "Enregistrer"
+      cancel_button: "Annuler"
+      apply_button: "Appliquer"
+  
+  de:
+    ui:
+      app_title: "MarkItDown - Datei zu Markdown Konverter"
+      convert_button: "Konvertieren"
+      cancel_button: "Abbrechen"
+      browse_button: "Durchsuchen..."
+      input_file_label: "Eingabedatei:"
+      output_file_label: "Ausgabedatei:"
+      progress_label: "Fortschritt"
+      result_label: "Ergebnis"
+      status_ready: "Bereit"
+      status_converting: "Konvertierung läuft..."
+      status_completed: "Konvertierung erfolgreich abgeschlossen!"
+      status_failed: "Konvertierung fehlgeschlagen"
+      status_cancelled: "Konvertierung abgebrochen"
+      error_no_file: "Bitte wählen Sie eine Eingabedatei aus."
+      error_file_not_found: "Die Datei existiert nicht"
+      error_conversion_failed: "Die Konvertierung ist fehlgeschlagen"
+    settings:
+      title: "Einstellungen"
+      conversion_tab: "Konvertierung"
+      ui_tab: "Oberfläche"
+      advanced_tab: "Erweitert"
+      save_button: "Speichern"
+      cancel_button: "Abbrechen"
+      apply_button: "Anwenden"
+  
+  ja:
+    ui:
+      app_title: "MarkItDown - ファイルからMarkdownへの変換器"
+      convert_button: "変換"
+      cancel_button: "キャンセル"
+      browse_button: "参照..."
+      input_file_label: "入力ファイル:"
+      output_file_label: "出力ファイル:"
+      progress_label: "進捗"
+      result_label: "結果"
+      status_ready: "準備完了"
+      status_converting: "変換中..."
+      status_completed: "変換が正常に完了しました！"
+      status_failed: "変換に失敗しました"
+      status_cancelled: "変換がキャンセルされました"
+      error_no_file: "入力ファイルを選択してください。"
+      error_file_not_found: "ファイルが存在しません"
+      error_conversion_failed: "変換に失敗しました"
+    settings:
+      title: "設定"
+      conversion_tab: "変換"
+      ui_tab: "インターフェース"
+      advanced_tab: "詳細"
+      save_button: "保存"
+      cancel_button: "キャンセル"
+      apply_button: "適用"
+  
+  zh:
+    ui:
+      app_title: "MarkItDown - 文件到Markdown转换器"
+      convert_button: "转换"
+      cancel_button: "取消"
+      browse_button: "浏览..."
+      input_file_label: "输入文件:"
+      output_file_label: "输出文件:"
+      progress_label: "进度"
+      result_label: "结果"
+      status_ready: "就绪"
+      status_converting: "转换中..."
+      status_completed: "转换成功完成！"
+      status_failed: "转换失败"
+      status_cancelled: "转换已取消"
+      error_no_file: "请选择输入文件。"
+      error_file_not_found: "文件不存在"
+      error_conversion_failed: "转换失败"
+    settings:
+      title: "设置"
+      conversion_tab: "转换"
+      ui_tab: "界面"
+      advanced_tab: "高级"
+      save_button: "保存"
+      cancel_button: "取消"
+      apply_button: "应用"
+

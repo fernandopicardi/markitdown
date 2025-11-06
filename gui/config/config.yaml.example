@@ -1,0 +1,85 @@
+# MarkItDown GUI - User Configuration
+# Copy this file to config.yaml and customize as needed
+# Settings here override defaults from config.default.yaml
+
+# Application Profile
+# Options: development, production, test
+profile: production
+
+# Conversion Settings
+conversion:
+  # Enable MarkItDown plugins
+  enable_plugins: false
+  
+  # Azure Document Intelligence (optional)
+  # docintel_endpoint: "https://your-endpoint.cognitiveservices.azure.com/"
+  # docintel_key: "your-key-here"
+  
+  # LLM Integration (optional)
+  # llm_enabled: true
+  # llm_model: "gpt-4o"
+  # llm_api_key: "your-api-key"
+  # llm_prompt: "Describe this image in detail"
+  
+  # Output settings
+  default_output_dir: null  # null = same as input file
+  auto_save: true
+  preserve_formatting: true
+  
+  # Performance
+  max_concurrent_conversions: 1
+
+# UI Settings
+ui:
+  theme: default  # default, dark, light, blue, green, custom
+  language: en  # en, pt, es, fr, de, ja, zh
+  
+  window_width: 800
+  window_height: 600
+  window_maximized: false
+  auto_save_geometry: true
+  
+  show_toolbar: true
+  show_statusbar: true
+  show_line_numbers: false
+  
+  font_family: "Segoe UI"
+  font_size: 10
+
+# Advanced Settings
+advanced:
+  log_level: INFO
+  log_file: null
+  enable_debug_mode: false
+  cache_enabled: true
+  cache_size_mb: 100
+  auto_update_check: true
+  telemetry_enabled: false
+  experimental_features: false
+
+# File Format Overrides (optional)
+# Only specify formats you want to override
+# file_formats:
+#   pdf:
+#     enabled: true
+#     options:
+#       ocr_enabled: true
+#     max_file_size_mb: 200
+
+# Theme Overrides (optional)
+# themes:
+#   custom:
+#     name: custom
+#     display_name: "My Custom Theme"
+#     colors:
+#       background: "#FFFFFF"
+#       foreground: "#000000"
+#       primary: "#0078D4"
+
+# i18n Overrides (optional)
+# Add custom translations here
+# i18n:
+#   en:
+#     ui:
+#       custom_string: "Custom Text"
+

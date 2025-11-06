@@ -1,0 +1,26 @@
+# MarkItDown GUI - Development Profile Configuration
+# This profile is used when profile: development is set
+
+profile: development
+
+conversion:
+  enable_plugins: true
+  enable_debug_mode: true
+
+ui:
+  theme: dark
+  language: en
+  show_line_numbers: true
+
+advanced:
+  log_level: DEBUG
+  enable_debug_mode: true
+  experimental_features: true
+  cache_enabled: false
+
+file_formats:
+  pdf:
+    options:
+      ocr_enabled: true
+    timeout_seconds: 600  # Longer timeout for debugging
+

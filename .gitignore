@@ -165,3 +165,14 @@ cython_debug/
 src/.DS_Store
 .DS_Store
 .cursorrules
+
+# GUI specific
+gui/assets/*.png
+gui/assets/*.jpg
+gui/assets/*.jpeg
+gui/assets/*.ico
+gui/assets/*.gif
+!gui/assets/.gitkeep
+gui/config/*.local.*
+*.ui
+*.qrc

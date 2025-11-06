@@ -1,0 +1,88 @@
+# GUI Dependencies for MarkItDown
+# Install with: pip install -r requirements-gui.txt
+
+# Core GUI Framework
+customtkinter>=5.2.0
+tkinter-tooltip>=2.0.0
+ttkthemes>=3.2.2
+tkinterdnd2>=0.3.0  # Drag & Drop support
+
+# Alternative GUI frameworks (optional)
+# PyQt6>=6.6.0
+# PyQt6-Qt6>=6.6.0
+# PyQt6-sip>=13.6.0
+# PySide6>=6.6.0
+
+# File handling and dialogs
+pathlib2>=2.3.7; python_version < '3.4'
+
+# Progress bars and UI enhancements
+tqdm>=4.66.0
+
+# Image handling (for icons and previews)
+Pillow>=10.0.0
+
+# Threading utilities for async operations
+threading-timer>=0.1.0
+
+# Configuration management
+configparser>=5.3.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+pyyaml>=6.0.0
+watchdog>=3.0.0
+
+# Template system
+jinja2>=3.1.0
+markdown>=3.4.0
+markdown-extensions>=0.1.0
+
+# Markdown rendering and preview
+markdown-it-py>=3.0.0
+mistune>=3.0.0
+pygments>=2.16.0
+mdit-py-plugins>=0.4.0  # Markdown extensions
+weasyprint>=60.0  # PDF export
+html2text>=2020.1.16
+tkinterweb>=3.0.0  # HTML rendering in Tkinter (optional)
+
+# Document comparison and viewing
+difflib  # Built-in Python library
+pymupdf>=1.23.0  # PDF viewing
+python-docx>=1.1.0  # DOCX viewing
+Pillow>=10.0.0  # Image handling (already included)
+
+# Plugin system dependencies
+importlib-metadata>=6.0.0  # Plugin metadata (optional, built-in in Python 3.8+)
+# importlib.util is built-in Python library
+semver>=3.0.0  # Version comparison (optional)
+
+# Example plugins
+pytesseract>=0.3.10  # OCR plugin
+notion-client>=2.0.0  # Notion plugin
+GitPython>=3.1.40  # Git plugin
+
+# Cloud storage integrations
+google-api-python-client>=2.100.0  # Google Drive
+google-auth-httplib2>=0.1.1
+google-auth-oauthlib>=1.1.0
+dropbox>=11.36.0  # Dropbox
+msal>=1.24.0  # OneDrive (Microsoft Authentication Library)
+boto3>=1.28.0  # AWS S3
+botocore>=1.31.0
+
+# Platform exporters
+notion-client>=2.2.0  # Notion (already included in plugins)
+requests>=2.31.0  # Confluence, WordPress, Medium
+wordpress-xmlrpc>=2.3  # WordPress
+GitPython>=3.1.40  # GitHub Wiki (already included)
+PyYAML>=6.0.0  # Obsidian frontmatter (already included)
+markdown>=3.4.0  # Markdown to HTML conversion
+
+# Logging enhancements
+colorlog>=6.8.0
+
+# MarkItDown core (if not already installed)
+# markitdown[all]>=0.1.0
+
+

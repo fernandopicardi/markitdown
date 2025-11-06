@@ -1,0 +1,4 @@
+"""
+GUI tests package.
+"""
+

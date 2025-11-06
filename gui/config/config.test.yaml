@@ -1,0 +1,24 @@
+# MarkItDown GUI - Test Profile Configuration
+# This profile is used when profile: test is set
+
+profile: test
+
+conversion:
+  enable_plugins: false
+  max_concurrent_conversions: 1
+
+ui:
+  theme: default
+  language: en
+
+advanced:
+  log_level: WARNING
+  cache_enabled: false
+  telemetry_enabled: false
+  auto_update_check: false
+
+file_formats:
+  pdf:
+    max_file_size_mb: 10  # Smaller limit for testing
+    timeout_seconds: 30
+
